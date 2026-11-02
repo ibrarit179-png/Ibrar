@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Halden &amp; Rowe — Clothing for work</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&amp;family=Hanken+Grotesk:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eceff0;--surface:#fff;--ink:#14212e;--mute:#58656f;--line:#cdd4d8;--accent:#9a6b2f;--on-ink:#eceff0;--swatch:#1f3347;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10171e;--surface:#17212b;--ink:#e8ecee;--mute:#9aa7b0;--line:#2b3946;--accent:#c9975a;--on-ink:#10171e;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#10171e;--surface:#17212b;--ink:#e8ecee;--mute:#9aa7b0;--line:#2b3946;--accent:#c9975a;--on-ink:#10171e;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "Hanken Grotesk",system-ui,sans-serif}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+header{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.logo{font:400 26px/1 "Instrument Serif",Georgia,serif;text-decoration:none;letter-spacing:.01em}
+nav{display:flex;gap:28px;font-size:15px}
+nav a{text-decoration:none;color:var(--mute)}
+nav a:hover{color:var(--ink)}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:stretch;padding:40px 0 72px}
+h1{font:400 clamp(44px,7vw,92px)/.98 "Instrument Serif",Georgia,serif;margin:0 0 24px;letter-spacing:-.01em}
+.lede{max-width:46ch;color:var(--mute);font-size:19px;margin:0 0 32px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:14px 26px;border-radius:2px;font-weight:600;font-size:15px;text-decoration:none;border:1px solid var(--ink)}
+.btn.main{background:var(--ink);color:var(--on-ink)}
+.btn.main:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.alt:hover{background:var(--line)}
+.cloth{position:relative;min-height:440px;background-color:var(--swatch);border-radius:2px;overflow:hidden;transition:background-color .35s;display:flex;flex-direction:column;justify-content:flex-end;padding:24px;color:#f3f1ec}
+.cloth::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(255,255,255,.07) 0 2px,transparent 2px 7px),repeating-linear-gradient(-45deg,rgba(0,0,0,.12) 0 2px,transparent 2px 7px)}
+.cloth>*{position:relative}
+.cloth h2{font:400 34px/1.1 "Instrument Serif",Georgia,serif;margin:0 0 4px}
+.cloth p{margin:0 0 18px;font-size:15px;opacity:.9}
+.chips{display:flex;gap:10px}
+.chip{width:44px;height:44px;border-radius:50%;border:2px solid rgba(255,255,255,.4);cursor:pointer;padding:0;background:var(--c)}
+.chip[aria-pressed="true"]{outline:2px solid #fff;outline-offset:3px}
+section{padding:72px 0;border-top:1px solid var(--line)}
+h2.t{font:400 clamp(32px,4vw,50px)/1.05 "Instrument Serif",Georgia,serif;margin:0 0 12px}
+.sub{color:var(--mute);max-width:54ch;margin:0 0 40px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.item{background:var(--surface);border:1px solid var(--line);border-radius:2px}
+.item .pic{height:240px;background-color:var(--c);position:relative}
+.item .pic::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.08) 0 1px,transparent 1px 6px)}
+.item .body{padding:18px 20px 22px}
+.item h3{margin:0;font-size:18px;font-weight:600}
+.item p{margin:4px 0 12px;color:var(--mute);font-size:15px}
+.price{font-weight:600}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.facts{display:grid;gap:22px}
+.facts div{border-left:3px solid var(--accent);padding-left:18px}
+.facts b{display:block;font-size:18px}
+.facts span{color:var(--mute)}
+form{display:flex;gap:10px;flex-wrap:wrap;max-width:480px}
+input{flex:1 1 220px;padding:14px;font:inherit;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:2px}
+button.btn{font-family:inherit;cursor:pointer}
+#msg{margin:12px 0 0;color:var(--accent);min-height:1.6em}
+footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mute);font-size:14px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+@media(max-width:820px){.hero,.split{grid-template-columns:1fr;gap:32px}.grid{grid-template-columns:1fr}nav{gap:16px}.cloth{min-height:320px}}
+@media(max-width:520px){nav a:nth-child(n+3){display:none}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<a class="logo" href="#top">Halden &amp; Rowe</a>
+<nav aria-label="Main"><a href="#collection">Collection</a><a href="#fit">Fit service</a><a href="#contact">Contact</a></nav>
+</header>
+
+<main id="top">
+<div class="hero">
+<div>
+<h1>Clothes that make the meeting easier.</h1>
+<p class="lede">Tailored suits, shirts and knitwear for people who work in rooms that matter. Made from fabrics that hold their shape from the first train to the last call.</p>
+<div class="btns"><a class="btn main" href="#collection">Shop the collection</a><a class="btn alt" href="#fit">Book a fitting</a></div>
+</div>
+<div class="cloth" id="cloth">
+<h2 id="cn">Harbour navy</h2>
+<p id="cd">Worsted wool twill, 280 g. Our everyday suit cloth.</p>
+<div class="chips" role="group" aria-label="Choose a fabric">
+<button class="chip" style="--c:#1f3347" data-n="Harbour navy" data-d="Worsted wool twill, 280 g. Our everyday suit cloth." aria-label="Harbour navy" aria-pressed="true"></button>
+<button class="chip" style="--c:#4a4f55" data-n="Slate grey" data-d="Super 110s wool, 260 g. Sharp in any light." aria-label="Slate grey" aria-pressed="false"></button>
+<button class="chip" style="--c:#3b4a3f" data-n="Fern green" data-d="Wool and linen blend, 240 g. Cooler for summer client days." aria-label="Fern green" aria-pressed="false"></button>
+<button class="chip" style="--c:#6b5240" data-n="Walnut brown" data-d="Brushed wool flannel, 320 g. Built for cold offices." aria-label="Walnut brown" aria-pressed="false"></button>
+</div>
+</div>
+</div>
+
+<section id="collection">
+<h2 class="t">The working wardrobe</h2>
+<p class="sub">Six pieces that cover most weeks. Every item is machine-washable or dry-clean once a season.</p>
+<div class="grid">
+<article class="item"><div class="pic" style="--c:#1f3347"></div><div class="body"><h3>Rowe two-piece suit</h3><p>Navy worsted wool, half-canvas jacket.</p><span class="price">$620</span></div></article>
+<article class="item"><div class="pic" style="--c:#4a4f55"></div><div class="body"><h3>Halden blazer</h3><p>Slate wool, soft shoulder, two buttons.</p><span class="price">$340</span></div></article>
+<article class="item"><div class="pic" style="--c:#dfe5e8"></div><div class="body"><h3>Non-iron poplin shirt</h3><p>Egyptian cotton, spread collar.</p><span class="price">$85</span></div></article>
+<article class="item"><div class="pic" style="--c:#3b4a3f"></div><div class="body"><h3>Merino crew knit</h3><p>Extra-fine merino, fits under a jacket.</p><span class="price">$120</span></div></article>
+<article class="item"><div class="pic" style="--c:#6b5240"></div><div class="body"><h3>Travel trouser</h3><p>Stretch wool, crease-resistant.</p><span class="price">$145</span></div></article>
+<article class="item"><div class="pic" style="--c:#2a2f36"></div><div class="body"><h3>City overcoat</h3><p>Wool and cashmere, knee length.</p><span class="price">$480</span></div></article>
+</div>
+</section>
+
+<section id="fit">
+<div class="split">
+<div>
+<h2 class="t">Fitted in 30 minutes, adjusted for free.</h2>
+<p class="sub">Book a fitting at our studio or by video. A tailor takes your measurements and recommends a cut. Alterations in the first 60 days cost nothing.</p>
+<a class="btn main" href="#contact">Book a fitting</a>
+</div>
+<div class="facts">
+<div><b>Free alterations</b><span>Hems, sleeves and waist, for 60 days after delivery.</span></div>
+<div><b>Delivery in 5 working days</b><span>Free on orders over $150, tracked to your door.</span></div>
+<div><b>Returns within 30 days</b><span>Unworn items go back for a full refund.</span></div>
+</div>
+</div>
+</section>
+
+<section id="contact">
+<h2 class="t">Get fitting dates and new fabrics.</h2>
+<p class="sub">One email a month. Unsubscribe whenever you like.</p>
+<form id="f"><input type="email" id="em" placeholder="Work email" aria-label="Work email" required><button class="btn main" type="submit">Join the list</button></form>
+<p id="msg" role="status"></p>
+</section>
+</main>
+
+<footer><span>© 2026 Halden &amp; Rowe</span><span>Studio hours: Mon–Sat, 10:00–18:00</span></footer>
+</div>
+<script>
+var cl=document.getElementById('cloth'),chips=document.querySelectorAll('.chip');
+chips.forEach(function(c){c.addEventListener('click',function(){
+chips.forEach(function(x){x.setAttribute('aria-pressed','false')});
+c.setAttribute('aria-pressed','true');
+cl.style.setProperty('--swatch',getComputedStyle(c).getPropertyValue('--c'));
+document.getElementById('cn').textContent=c.dataset.n;
+document.getElementById('cd').textContent=c.dataset.d;
+})});
+document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();
+document.getElementById('msg').textContent='Thanks. You’re on the list.';
+document.getElementById('em').value='';});
+</script>
+</body>
+</html>
